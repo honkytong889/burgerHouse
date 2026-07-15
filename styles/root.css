@@ -1,6 +1,11 @@
 :root {
     --color-header-footer: rgba(231, 108, 31, 1);
     --color-link: rgba(255, 255, 255, 1);
+    --color-h1-span: rgba(231, 108, 31, 1);
+    --font-size-24: 24px;
+    --font-weight-bold: 700;
+    --font-family-main: 'Palanquin', sans-serif;
+
 
 }
 
@@ -17,4 +22,21 @@ body {
     flex-direction: column;
     min-height: 100vh;
     padding-top: 120px;
+}
+
+h1 {
+    font-family: Palanquin Dark, sans-serif;
+    font-size: 48px;
+    font-weight: 700;
+    font-style: bold;
+}
+
+h1 span {
+    color: var(--color-h1-span);
+}
+
+.hero-subtitle {
+    font-size: var(--font-size-24);
+    font-weight: var(--font-weight-bold);
+    font-family: var(--font-family-main);
 }
