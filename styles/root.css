@@ -1,11 +1,20 @@
 :root {
+    /*colors*/
+
     --color-header-footer: rgba(231, 108, 31, 1);
     --color-link: rgba(255, 255, 255, 1);
     --color-h1-span: rgba(231, 108, 31, 1);
+    --color-h2: rgba(255, 255, 255, 1);
+    --color-seperator: rgba(231, 108, 31, 1);
+
+    /*fonts*/
+    --font-family-main: Palanquin Dark, sans-serif;
+    --font-family-sub: 'Palanquin', sans-serif;
+    --font-size-48: 48px;
+    --font-size-40: 40px;
     --font-size-24: 24px;
-    --font-weight-bold: 700;
-    --font-family-main: 'Palanquin', sans-serif;
     --font-size-18: 18px;
+    --font-weight-bold: 700;
     --font-weight-regular: 400;
 
 
@@ -27,25 +36,33 @@ body {
 }
 
 h1 {
-    font-family: Palanquin Dark, sans-serif;
-    font-size: 48px;
-    font-weight: 700;
-    font-style: bold;
+    font-family: var(--font-family-main);
+    font-size: var(--font-size-48);
+    font-weight: var(--font-weight-bold);
+    font-style: 700;
 }
 
 h1 span {
     color: var(--color-h1-span);
 }
 
+h2 {
+    font-size: var(--font-size-40);
+    font-weight: var(--font-weight-bold);
+    font-family: var(--font-family-sub);
+    color: var(--color-h2);
+
+}
+
 .hero-subtitle {
     font-size: var(--font-size-24);
     font-weight: var(--font-weight-bold);
-    font-family: var(--font-family-main);
+    font-family: var(--font-family-sub);
 }
 
 .footer-container span,
 .footer-container a {
-    font-family: 'Palanquin', sans-serif;
+    font-family: var(--font-family-sub);
     font-size: var(--font-size-18);
     font-weight: var(--font-weight-regular);
     color: var(--color-link);

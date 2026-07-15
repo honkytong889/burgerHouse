@@ -88,3 +88,53 @@ header {
     align-items: center;
     margin-top: 10px;
 }
+
+/* dishes-section */
+.dishes-and-basket-section {
+    display: flex;
+    justify-content: space-between;
+}
+
+.category-seperator {
+    position: absolute;
+    left: 0;
+    background-color: var(--color-seperator);
+    width: 100%;
+    height: 60px;
+    z-index: -1;
+}
+
+.h2-container {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+    height: 60px;
+}
+
+.burger-icon {
+    margin-bottom: 24px;
+}
+
+.h2-container {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+    height: 60px;
+}
+
+.category-icon {
+    margin-left: 160px;
+    height: 90px;
+}
+
+#SectionBurger>.category-seperator {
+    top: calc(120px + 400px + 300px);
+}
+
+#SectionPizza>.category-seperator {
+    top: calc(120px + 400px + 300px + 60px + 770px);
+}
+
+#SectionSalad>.category-seperator {
+    top: calc(120px + 400px + 300px + 60px + 770px + 60px + 770px);
+}
