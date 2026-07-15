@@ -3,7 +3,7 @@
 }
 
 
-
+/* header and footer */
 header,
 footer {
     background-color: var(--color-header-footer);
@@ -31,4 +31,12 @@ header {
 
 .nav-icon {
     height: 35px;
+}
+
+.footer-container {
+    display: flex;
+    justify-self: center;
+    align-items: center;
+    gap: 72px;
+    height: 120px;
 }
