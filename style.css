@@ -138,3 +138,20 @@ header {
 #SectionSalad>.category-seperator {
     top: calc(120px + 400px + 300px + 60px + 770px + 60px + 770px);
 }
+
+.category-container {
+    display: flex;
+    flex-direction: column;
+    padding-top: 32px;
+    gap: 16px;
+    height: 770px;
+}
+
+.dish-container {
+    background-color: var(--color-dish-container);
+    display: flex;
+    margin: 0 120px;
+    border-radius: 12px;
+    padding: 12px;
+    gap: 16px;
+}
