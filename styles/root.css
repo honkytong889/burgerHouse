@@ -1,0 +1,11 @@
+:root {
+    --color-header-footer: rgba(231, 108, 31, 1);
+
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    scroll-behavior: smooth;
+}
