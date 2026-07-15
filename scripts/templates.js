@@ -3,8 +3,8 @@ function templateDishContainer(indexDish, name, imageFilename, description, pric
         <div class="dish-container">
             <img class="dish-img" src="./assets/img/${imageFilename}" alt="${name}">
             <div class="name-and-description-container">
-                <p class="font-size-24px" >${name}</p>
-                <p class="font-size-16px" >${description}</p>
+                <h3 class="dish-card" >${name}</h3>
+                <p class="dish-description" >${description}</p>
             </div>
             <div class="price-and-add-container">
                 <p class="font-size-24px" >${price}</p>

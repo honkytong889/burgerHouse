@@ -8,16 +8,25 @@
     --color-seperator: rgba(231, 108, 31, 1);
     --color-dish-container: rgba(253, 234, 220, 1);
 
-    /*fonts*/
+    /*fonts,family,size,weight*/
     --font-family-main: 'Palanquin Dark', sans-serif;
     --font-family-sub: 'Palanquin', sans-serif;
+
+    /* Schriftgrößen */
     --font-size-48: 48px;
     --font-size-40: 40px;
     --font-size-24: 24px;
     --font-size-18: 18px;
-    --font-size-16: 16px;
+    --dish-font-size-16: 16px;
+
+    /* Schriftgewichte (KORREKTUR: 600 für SemiBold ergänzt) */
     --font-weight-bold: 700;
+    --font-weight-semibold: 600;
+    --font-weight-medium: 500;
     --font-weight-regular: 400;
+
+    /* Zeilenhöhen  */
+    --line-height-120: 1.2;
 
 
 }
@@ -61,6 +70,23 @@ h2 {
     font-weight: var(--font-weight-bold);
     font-family: var(--font-family-sub);
 }
+
+.dish-card h3 {
+    font-family: var(--font-family-sub);
+    font-size: var(--font-size-24);
+    font-weight: var(--font-weight-semibold);
+    line-height: var(--line-height-120);
+    font-style: normal;
+}
+
+.dish-description {
+    font-family: var(--font-family-sub);
+    font-size: var(--dish-font-size-16);
+    font-weight: var(--font-weight-medium);
+    line-height: var(--line-height-120);
+    font-style: normal;
+}
+
 
 .footer-container span,
 .footer-container a {
