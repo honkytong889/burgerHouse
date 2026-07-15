@@ -19,7 +19,7 @@
     --font-size-18: 18px;
     --dish-font-size-16: 16px;
 
-    /* Schriftgewichte (KORREKTUR: 600 für SemiBold ergänzt) */
+    /* Schriftgewichte  */
     --font-weight-bold: 700;
     --font-weight-semibold: 600;
     --font-weight-medium: 500;
@@ -71,7 +71,7 @@ h2 {
     font-family: var(--font-family-sub);
 }
 
-.dish-card h3 {
+h3.dish-card {
     font-family: var(--font-family-sub);
     font-size: var(--font-size-24);
     font-weight: var(--font-weight-semibold);
