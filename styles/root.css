@@ -28,8 +28,9 @@
 
     /* Zeilenhöhen  */
     --line-height-120: 1.2;
-
-
+    /*Button*/
+    --color-btn-bg: rgba(255, 255, 255, 1);
+    --color-btn-text: #333333
 }
 
 * {
@@ -86,6 +87,7 @@ h3.dish-card {
     font-weight: var(--font-weight-medium);
     line-height: var(--line-height-120);
     font-style: normal;
+    padding-top: 15px;
 }
 
 .dish-price {
