@@ -7,7 +7,7 @@ function templateDishContainer(indexDish, name, imageFilename, description, pric
                 <p class="dish-description" >${description}</p>
             </div>
             <div class="price-and-add-container">
-                <p class="font-size-24px" >${price}</p>
+                <p class="dish-price" >${price}</p>
                 <button id="ButtonAddToBasket${indexDish}" onclick="addToBasket(${indexDish})" class="btn-add-to-basket">
                     Add to basket
                 </button>

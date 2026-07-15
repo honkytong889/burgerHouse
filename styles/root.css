@@ -18,6 +18,7 @@
     --font-size-24: 24px;
     --font-size-18: 18px;
     --dish-font-size-16: 16px;
+    --dish-price-size: 24px;
 
     /* Schriftgewichte  */
     --font-weight-bold: 700;
@@ -86,6 +87,15 @@ h3.dish-card {
     line-height: var(--line-height-120);
     font-style: normal;
 }
+
+.dish-price {
+    font-family: var(--font-family-sub);
+    font-size: var(--dish-price-size);
+    font-weight: var(--font-weight-semibold);
+    line-height: var(--line-height-120);
+    font-style: var(--font-weight-semibold);
+}
+
 
 
 .footer-container span,
