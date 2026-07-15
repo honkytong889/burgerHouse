@@ -1,5 +1,6 @@
 :root {
     --color-header-footer: rgba(231, 108, 31, 1);
+    --color-link: rgba(255, 255, 255, 1);
 
 }
 
@@ -8,4 +9,12 @@
     margin: 0;
     padding: 0;
     scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    padding-top: 120px;
 }
