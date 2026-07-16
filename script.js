@@ -46,3 +46,15 @@ function renderEmptyBasket() {
     if (basketDialogRef) basketDialogRef.innerHTML = templateEmptyBasket();
 }
 
+function renderFilledBasket() {
+    renderShoppingCartIcon();
+
+    const basketAsideRef = document.getElementById('BasketAside');
+    if (basketAsideRef) basketAsideRef.innerHTML = templateFilledBasket('Aside');
+
+    const basketDialogRef = document.getElementById('BasketDialog');
+    if (basketDialogRef) basketDialogRef.innerHTML = templateFilledBasket('Dialog');
+
+    renderDishesInBasket('Aside');
+    renderDishesInBasket('Dialog');
+}

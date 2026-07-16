@@ -26,3 +26,31 @@ function templateEmptyBasket() {
             <img class="" src="assets/icons/basket.svg" alt="Einkaufswagen-Icon">
         </div>`;
 }
+
+function templateFilledBasket(position) {
+    return `
+        <div class="basket">
+            <button onclick="closeBasketOverlay()" class="btn-close">
+                <img src="assets/icons/close.svg" alt="Warenkorb schließen">
+            </button>
+            <h3>Your Basket</h3>
+            <div id="ContainerChoosenDishes${position}" class="choosen-dishes-container"></div>
+            <div class="money-calculation">
+                <table>
+                    <tr>
+                        <td>Subtotal</td>
+                        <td id="Subtotal${position}"></td>
+                    </tr>
+                    <tr>
+                        <td>Delivery fee</td>
+                        <td id="DeliveryFee${position}"></td>
+                    </tr>
+                    <tr>
+                        <th>Total </th>
+                        <th id="Total${position}"></th>
+                    </tr>
+                </table>
+                <button onclick="showConfirmationOverlay()" id="BuyNow${position}" class="btn-buy-now"></button>  
+            </div>
+        </div>`;
+}
