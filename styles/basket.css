@@ -17,8 +17,15 @@ aside>.basket {
     height: min(800px, calc(100vh - 80px));
 }
 
+.basket h3 {
+    font-family: var(--font-family-sub);
+    font-size: var(--font-size-32);
+    font-weight: var(--basket-empty-weight);
+}
+
 .p-empty-basket {
     text-align: center;
+    font-family: var(--font-family-sub);
     font-size: var(--basket-empty-size);
     font-weight: var(--basket-empty-weight);
     line-height: var(--line-height-120);

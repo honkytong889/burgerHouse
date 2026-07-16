@@ -27,6 +27,9 @@
     --dish-font-size: var(--font-size-16);
     --dish-price-size: var(--font-size-24);
 
+    --basket-empty-size: var(--font-size-24);
+    --basket-empty-weight: var(--font-weight-medium);
+
     --basket-title-family: var(--font-family-sub);
     --basket-title-size: var(--font-size-32);
     --basket-title-weight: var(--font-weight-bold);
