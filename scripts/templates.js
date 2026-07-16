@@ -87,3 +87,12 @@ function templateDishCartInBasket(position, indexDish, name, amount, basketPrice
             </div>
         </div>`;
 }
+
+function templateConfirmationDialog() {
+    return `
+        <div class="confirmation-overlay">
+            <img class="delivery-truck-icon" src="assets/icons/delivery.svg" alt="Bestellung bestätigt">
+            <span class="span-confirmation-dialog">Order confirmed!</span>
+            <p class="p-confirmation-dialog">Your food is on the way!</p>
+        </div>`;
+}
