@@ -7,6 +7,8 @@
     --color-h2: rgba(255, 255, 255, 1);
     --color-seperator: rgba(231, 108, 31, 1);
     --color-dish-container: rgba(253, 234, 220, 1);
+    --color-dish-basket: rgba(253, 234, 220, 1);
+    --color-bg-basket: rgba(54, 53, 52, 1);
 
     /*fonts,family,size,weight*/
     --font-family-main: 'Palanquin Dark', sans-serif;
@@ -15,10 +17,29 @@
     /* font-size */
     --font-size-48: 48px;
     --font-size-40: 40px;
+    --font-size-32: 32px;
     --font-size-24: 24px;
+    --font-size-22: 22px;
     --font-size-18: 18px;
-    --dish-font-size-16: 16px;
-    --dish-price-size: 24px;
+    --font-size-16: 16px;
+
+    /* fonts dish and basket*/
+    --dish-font-size: var(--font-size-16);
+    --dish-price-size: var(--font-size-24);
+
+    --basket-title-family: var(--font-family-sub);
+    --basket-title-size: var(--font-size-32);
+    --basket-title-weight: var(--font-weight-bold);
+
+    --basket-item-family: var(--font-family-sub);
+    --basket-item-size: var(--font-size-22);
+    --basket-item-weight: var(--font-weight-bold);
+
+    --basket-price-size: var(--font-size-18);
+    --basket-price-weight: var(--font-weight-semibold);
+
+    --basket-total-size: var(--font-size-24);
+    --basket-total-weight: var(--font-weight-bold);
 
     /* font-weight */
     --font-weight-bold: 700;

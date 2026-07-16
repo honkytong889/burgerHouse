@@ -19,7 +19,7 @@ function templateEmptyBasket() {
     return `
         <div class="basket">
             <button onclick="closeBasketOverlay()" class="btn-close">
-                <img src="assets/icons/close.svg" alt="Warenkorb schließen">
+                <img src="./assets/icons/close.svg" alt="Warenkorb schließen">
             </button>
             <h3>Your Basket</h3>
             <p class="p-empty-basket">Nothing here yet.<br>Go ahead and choose something delicious!</p>
