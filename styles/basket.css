@@ -82,3 +82,25 @@ aside>.basket {
     align-items: center;
     gap: 8px;
 }
+
+.amount-control button,
+.amount-control span,
+.amount-control div {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 28px;
+    height: 28px;
+    font-size: 22px;
+    font-weight: bold;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    color: inherit;
+}
+
+.amount-control span:not(button) {
+    cursor: default;
+    font-size: 18px;
+}
