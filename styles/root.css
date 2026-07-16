@@ -46,7 +46,7 @@
     --basket-item-size: var(--font-size-22);
     --basket-item-weight: var(--font-weight-bold);
 
-    --basket-price-size: var(--font-size-18);
+    --basket-price-size: var(--font-size-22);
     --basket-price-weight: var(--font-weight-semibold);
 
     --basket-total-size: var(--font-size-24);

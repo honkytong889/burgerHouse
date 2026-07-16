@@ -57,22 +57,33 @@ function templateFilledBasket(position) {
 
 
 function templateDishCartInBasket(position, indexDish, name, amount, basketPrice) {
+    const isSingle = amount === 1;
+
     return `
-        <div class="choosen-dish-card">
-            <div class="choosen-dish-card-child-container">
-                <p>${amount} x ${name}</p>
-                <button onclick="deleteAllFromBasket(${indexDish})" id="DeleteAll${indexDish}${position}" class="btn-delete-all">
-                    <img class="delete-svg" src="assets/icons/trash.svg" alt="Gericht aus dem Warenkorb löschen">
-                </button>
-            </div>
-            <div class="choosen-dish-card-child-container">
-                <div class="amount-control font-24px">
+        <div class="choosen-dish-card ${isSingle ? 'single-item' : ''}">
+            <div class="choosen-dish-card-child-container card-header-row">
+                <p class="dish-title-text">${amount} x ${name}</p>
                 
-                    <button onclick="deleteOneFromBasket(${indexDish})" id="DeleteOne${indexDish}${position}" class="btn-minus-plus font-24px">-</button>
+                ${!isSingle ? `
+                <button onclick="deleteAllFromBasket(${indexDish})" id="DeleteAll${indexDish}${position}" class="btn-delete-all text-delete-btn">
+                    <img class="delete-svg" src="assets/icons/trash.svg" alt="Gericht komplett löschen">
+                </button>` : ''}
+            </div>
+            
+            <div class="choosen-dish-card-child-container card-controls-row">
+                <div class="amount-control">
+                    ${isSingle ? `
+                    <button onclick="deleteOneFromBasket(${indexDish})" id="DeleteOne${indexDish}${position}" class="btn-minus-plus btn-trash-control">
+                        <img class="delete-svg-small" src="assets/icons/trash.svg" alt="Entfernen">
+                    </button>
+                    ` : `
+                    <button onclick="deleteOneFromBasket(${indexDish})" id="DeleteOne${indexDish}${position}" class="btn-minus-plus">-</button>
+                    `}
+                    
                     <span>${amount}</span>
-                    <button onclick="addToBasket(${indexDish})" class="btn-minus-plus font-24px">+</button>
+                    <button onclick="addToBasket(${indexDish})" class="btn-minus-plus">+</button>
                 </div>
-                <p>${basketPrice}</p>
+                <p class="dish-price-text">${basketPrice}</p>
             </div>
         </div>`;
 }
