@@ -9,6 +9,8 @@
     --color-dish-container: rgba(253, 234, 220, 1);
     --color-dish-basket: rgba(253, 234, 220, 1);
     --color-bg-basket: rgba(54, 53, 52, 1);
+    --color-scrollbar: rgba(231, 195, 173, 1);
+    --color-money-calc: rgba(255, 255, 255, 1);
 
     /*fonts,family,size,weight*/
     --font-family-main: 'Palanquin Dark', sans-serif;
@@ -16,12 +18,21 @@
 
     /* font-size */
     --font-size-48: 48px;
+    --font-size-42: 42px;
     --font-size-40: 40px;
     --font-size-32: 32px;
     --font-size-24: 24px;
     --font-size-22: 22px;
+    --font-size-20: 20px;
     --font-size-18: 18px;
     --font-size-16: 16px;
+
+    /* font-weight */
+    --font-weight-bold: 700;
+    --font-weight-semibold: 600;
+    --font-weight-medium: 500;
+    --font-weight-regular: 400;
+
 
     /* fonts dish and basket*/
     --dish-font-size: var(--font-size-16);
@@ -38,22 +49,27 @@
     --basket-item-size: var(--font-size-22);
     --basket-item-weight: var(--font-weight-bold);
 
-    --basket-price-size: var(--font-size-18);
+    --basket-price-size: var(--font-size-22);
     --basket-price-weight: var(--font-weight-semibold);
 
     --basket-total-size: var(--font-size-24);
     --basket-total-weight: var(--font-weight-bold);
 
-    /* font-weight */
-    --font-weight-bold: 700;
-    --font-weight-semibold: 600;
-    --font-weight-medium: 500;
-    --font-weight-regular: 400;
+    --basket-calc-family: var(--font-family-sub);
+    --basket-calc-size: var(--font-size-20);
+    --basket-calc-weight: var(--font-weight-semibold);
+
+    --overlay-headline-family: var(--font-family-sub);
+    --overlay-headline-size: var(--font-size-42);
+    --overlay-headline-weight: var(--font-weight-bold);
 
     /* line-height */
     --line-height-120: 1.2;
+
     /*Button*/
     --color-btn-bg: rgba(255, 255, 255, 1);
+    --color-button-border: rgba(255, 255, 255, 1);
+    --color-button-hover: rgba(231, 108, 31, 1);
     --color-btn-text: #333333
 }
 
