@@ -12,7 +12,7 @@
     --font-family-main: 'Palanquin Dark', sans-serif;
     --font-family-sub: 'Palanquin', sans-serif;
 
-    /* Schriftgrößen */
+    /* font-size */
     --font-size-48: 48px;
     --font-size-40: 40px;
     --font-size-24: 24px;
@@ -20,13 +20,13 @@
     --dish-font-size-16: 16px;
     --dish-price-size: 24px;
 
-    /* Schriftgewichte  */
+    /* font-weight */
     --font-weight-bold: 700;
     --font-weight-semibold: 600;
     --font-weight-medium: 500;
     --font-weight-regular: 400;
 
-    /* Zeilenhöhen  */
+    /* line-height */
     --line-height-120: 1.2;
     /*Button*/
     --color-btn-bg: rgba(255, 255, 255, 1);
