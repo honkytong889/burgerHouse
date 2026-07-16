@@ -20,3 +20,7 @@ function renderAllDishContainer() {
     }
 }
 
+function renderBasket() {
+    (dishesInBasket.dishes.length == 0) ? renderEmptyBasket() : renderFilledBasket();
+}
+
