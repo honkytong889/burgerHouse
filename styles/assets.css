@@ -52,3 +52,51 @@ a {
     align-items: center;
     justify-content: center;
 }
+
+.basket>.btn-close {
+    display: none;
+}
+
+.btn-delete-all {
+    align-self: flex-start;
+    background-color: transparent;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.btn-delete-one {
+    padding-top: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.close-svg {
+    fill: var(--color-dish-basket);
+    height: 16px;
+}
+
+.delete-svg {
+    height: 24px;
+    width: 24px;
+    box-sizing: content-box;
+    padding: 6px;
+    border-radius: 50%;
+    background-color: transparent;
+    transition: all 0.15s ease;
+}
+
+.btn-buy-now {
+    color: rgba(251, 251, 251, 1);
+    font-size: 32px;
+    font-weight: 700;
+    text-wrap: balance;
+    background-color: var(--color-button-hover);
+    border-radius: 60px;
+    padding: 16px;
+    width: 100%;
+}
