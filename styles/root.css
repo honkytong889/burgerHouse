@@ -18,6 +18,7 @@
 
     /* font-size */
     --font-size-48: 48px;
+    --font-size-42: 42px;
     --font-size-40: 40px;
     --font-size-32: 32px;
     --font-size-24: 24px;
@@ -58,9 +59,13 @@
     --basket-calc-size: var(--font-size-20);
     --basket-calc-weight: var(--font-weight-semibold);
 
+    --overlay-headline-family: var(--font-family-sub);
+    --overlay-headline-size: var(--font-size-42);
+    --overlay-headline-weight: var(--font-weight-bold);
 
     /* line-height */
     --line-height-120: 1.2;
+
     /*Button*/
     --color-btn-bg: rgba(255, 255, 255, 1);
     --color-button-border: rgba(255, 255, 255, 1);

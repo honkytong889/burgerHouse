@@ -226,13 +226,17 @@ function showConfirmationOverlay() {
     if (confirmationDialogRef) {
         deleteCompleteBasket();
         closeBasketOverlay();
+
+        confirmationDialogRef.innerHTML = templateConfirmationDialog();
+
         confirmationDialogRef.showModal();
+
         setTimeout(() => {
-            const hornSound = new Audio('sounds/universfield-double-car-honk-352443.mp3');
+            const hornSound = new Audio('assets/sounds/universfield-double-car-honk-352443.mp3');
             hornSound.volume = 0.5;
             hornSound.play().catch(e => console.log("Audio blockiert:", e));
         }, 500);
-        confirmationDialogRef.innerHTML = templateConfirmationDialog();
+
         setTimeout(() => closeConfirmationOverlay(), 2500);
     }
 }

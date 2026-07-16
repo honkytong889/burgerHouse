@@ -209,3 +209,78 @@ h3.dish-card {
     line-height: var(--line-height-120);
     font-style: var(--font-weight-semibold);
 }
+
+/* dialog-styling */
+
+.confirmation-dialog {
+    background-color: transparent;
+    justify-self: center;
+    align-self: center;
+    border: none;
+    overflow: hidden;
+}
+
+.confirmation-dialog::backdrop {
+    background: rgb(0 0 0 / 25%);
+}
+
+.confirmation-overlay {
+    background-color: var(--color-bg-basket);
+    color: var(--color-light);
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 30px;
+    padding: 32px;
+    overflow: hidden;
+}
+
+.span-confirmation-dialog,
+.span-confirmation-dialog font {
+    color: white !important;
+    font-family: var(--font-family-sub);
+    font-size: var(--confirmation-span-size, 48px) !important;
+    font-weight: var(--confirmation-span-weight, 700) !important;
+    line-height: var(--line-height-120, 1.2) !important;
+}
+
+
+
+.p-confirmation-dialog {
+    color: white;
+    text-align: center;
+    font-family: var(--font-family-sub);
+    font-size: var(--font-size-32);
+    font-weight: var(--font-weight-regular);
+    line-height: var(--line-height-120);
+}
+
+.delivery-truck-icon {
+    height: 120px;
+    width: auto;
+    margin-bottom: 20px;
+
+    animation: driveOutToRight 1.5s cubic-bezier(0.55, 0.055, 0.675, 0.19) forwards;
+}
+
+
+@keyframes driveOutToRight {
+    0% {
+        transform: translateX(0);
+
+        opacity: 1;
+    }
+
+    30% {
+        transform: translateX(-10px);
+
+    }
+
+    100% {
+        transform: translateX(200%);
+
+        opacity: 0;
+
+    }
+}
