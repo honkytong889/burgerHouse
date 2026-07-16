@@ -212,3 +212,33 @@ function showBasketOverlay() {
     }
 }
 
+
+function closeBasketOverlay() {
+    const basketDialogRef = document.getElementById('BasketDialog');
+    if (basketDialogRef) {
+        basketDialogRef.classList.remove('show');
+        document.body.style.overflow = '';
+    }
+}
+
+function showConfirmationOverlay() {
+    const confirmationDialogRef = document.getElementById('ConfirmationDialog');
+    if (confirmationDialogRef) {
+        deleteCompleteBasket();
+        closeBasketOverlay();
+        confirmationDialogRef.showModal();
+        setTimeout(() => {
+            const hornSound = new Audio('sounds/universfield-double-car-honk-352443.mp3');
+            hornSound.volume = 0.5;
+            hornSound.play().catch(e => console.log("Audio blockiert:", e));
+        }, 500);
+        confirmationDialogRef.innerHTML = templateConfirmationDialog();
+        setTimeout(() => closeConfirmationOverlay(), 2500);
+    }
+}
+
+function closeConfirmationOverlay() {
+    const confirmationDialogRef = document.getElementById('ConfirmationDialog');
+    if (confirmationDialogRef) confirmationDialogRef.close();
+}
+

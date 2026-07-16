@@ -149,3 +149,28 @@ th {
 .money-calculation th {
     padding-top: 8px;
 }
+
+#BasketDialog {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: 999;
+    background-color: var(--color-bg-basket);
+    border: none;
+    margin: 0;
+    padding: 24px;
+}
+
+
+#BasketDialog.show {
+    display: flex;
+    flex-direction: column;
+}
+
+
+#BasketDialog .btn-close {
+    display: inline-flex !important;
+}
