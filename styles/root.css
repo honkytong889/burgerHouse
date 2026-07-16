@@ -53,6 +53,10 @@
     --basket-total-size: var(--font-size-24);
     --basket-total-weight: var(--font-weight-bold);
 
+    --basket-calc-family: var(--font-family-sub);
+    --basket-calc-size: var(--font-size-20);
+    --basket-calc-weight: var(--font-weight-semibold);
+
 
     /* line-height */
     --line-height-120: 1.2;
