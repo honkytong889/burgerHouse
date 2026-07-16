@@ -9,6 +9,7 @@
     --color-dish-container: rgba(253, 234, 220, 1);
     --color-dish-basket: rgba(253, 234, 220, 1);
     --color-bg-basket: rgba(54, 53, 52, 1);
+    --color-scrollbar: rgba(231, 195, 173, 1);
 
     /*fonts,family,size,weight*/
     --font-family-main: 'Palanquin Dark', sans-serif;
@@ -22,6 +23,13 @@
     --font-size-22: 22px;
     --font-size-18: 18px;
     --font-size-16: 16px;
+
+    /* font-weight */
+    --font-weight-bold: 700;
+    --font-weight-semibold: 600;
+    --font-weight-medium: 500;
+    --font-weight-regular: 400;
+
 
     /* fonts dish and basket*/
     --dish-font-size: var(--font-size-16);
@@ -44,11 +52,6 @@
     --basket-total-size: var(--font-size-24);
     --basket-total-weight: var(--font-weight-bold);
 
-    /* font-weight */
-    --font-weight-bold: 700;
-    --font-weight-semibold: 600;
-    --font-weight-medium: 500;
-    --font-weight-regular: 400;
 
     /* line-height */
     --line-height-120: 1.2;
