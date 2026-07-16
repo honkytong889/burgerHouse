@@ -201,3 +201,14 @@ function changeAddButton(indexDish) {
         addButtonRef.classList.remove("btn-added-to-basket");
     }
 }
+
+
+function showBasketOverlay() {
+    const basketDialogRef = document.getElementById('BasketDialog');
+    if (basketDialogRef) {
+        basketDialogRef.classList.add('show');
+        document.body.style.overflow = 'hidden';
+        renderBasket();
+    }
+}
+
