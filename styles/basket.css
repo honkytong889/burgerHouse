@@ -76,3 +76,9 @@ aside>.basket {
     line-height: var(--line-height-120);
     color: var(--color-btn-text);
 }
+
+.amount-control {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
