@@ -12,7 +12,7 @@ a {
     font-weight: var(--font-weight-medium);
     background-color: var(--color-btn-bg);
     color: var(--color-btn-text);
-    border: 1px solid var(--color-seperator, #e0e0e0);
+    border: 1px solid var(--color-button-border);
     border-radius: 20px;
     padding: 5px 8px;
     cursor: pointer;
@@ -22,5 +22,33 @@ a {
 
 .btn-add-to-basket:hover {
     color: var(--color-header-footer);
-    border-color: var(--color-header-footer);
+    box-shadow: rgba(0, 0, 0, 0.2) 1px 2px 2px;
+}
+
+.btn-add-to-basket:active {
+    transform: scale(0.98);
+}
+
+.btn-add-to-basket.btn-added-to-basket {
+    color: var(--color-header-footer);
+    font-size: var(--font-size-16);
+    padding: 8px 18px;
+    margin-left: auto;
+}
+
+.btn-minus-plus:hover {
+    background-color: transparent;
+    background: transparent;
+    color: var(--color-button-hover);
+    transform: scale(1.2);
+}
+
+.btn-close {
+    position: absolute;
+    top: 24px;
+    right: 24px;
+    z-index: 10;
+    display: none;
+    align-items: center;
+    justify-content: center;
 }

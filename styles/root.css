@@ -63,6 +63,8 @@
     --line-height-120: 1.2;
     /*Button*/
     --color-btn-bg: rgba(255, 255, 255, 1);
+    --color-button-border: rgba(255, 255, 255, 1);
+    --color-button-hover: rgba(231, 108, 31, 1);
     --color-btn-text: #333333
 }
 
