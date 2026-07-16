@@ -60,3 +60,19 @@ aside>.basket {
     align-items: center;
     min-height: 40px;
 }
+
+.choosen-dish-card-child-container p:first-child {
+    font-family: var(--basket-item-family);
+    font-size: var(--basket-item-size);
+    font-weight: var(--basket-item-weight);
+    line-height: var(--line-height-120);
+    color: var(--color-btn-text);
+}
+
+.choosen-dish-card-child-container p:last-child {
+    font-family: var(--font-family-sub);
+    font-size: var(--basket-price-size);
+    font-weight: var(--basket-price-weight);
+    line-height: var(--line-height-120);
+    color: var(--color-btn-text);
+}
