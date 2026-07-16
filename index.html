@@ -5,9 +5,104 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Burger House</title>
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/img/Burger_landing.png">
+
+
+    <script src="./scripts/db.js" defer></script>
+    <script src="./scripts/templates.js" defer></script>
+    <script src="./script.js" defer></script>
+
+    <link rel="stylesheet" href="styles/fonts.css">
+    <link rel="stylesheet" href="styles/root.css">
+    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="styles/basket.css">
+    <link rel="stylesheet" href="styles/assets.css">
 </head>
 
-<body>
+<body onload="init()">
+    <header class="wrapper">
+        <div class="header-container">
+            <img class="header-logo" src="assets/icons/Logo_header.svg" alt="Burger House Logo">
+            <div>
+                <img class="nav-icon" src="assets/icons/menu (1).svg" alt="Navigationsmenü">
+                <span>0</span>
+            </div>
+        </div>
+    </header>
+    <main>
+        <section id="HeroSection" class="wrapper">
+            <div class="hero-image"></div>
+            <img id="HeroLogo" class="hero-logo" src="assets/img/Burger_landing.png" alt="BurgerHouse">
+            <div class="hero-text">
+                <div class="h1-container">
+                    <h1><span>Burger</span>House</h1>
+                    <div class="star-container">
+                        <img class="rating-star" src="assets/icons/rating.svg" alt="Stern">
+                    </div>
+                </div>
+                <p class="hero-subtitle">The best of Burgers, Pizza, and Greens, all in one great place.</p>
+            </div>
+        </section>
+        <section class="dishes-and-basket-section wrapper">
+            <section id="DishesSection">
+                <section id="SectionBurger">
+                    <div class="category-seperator"></div>
+                    <div class="h2-container">
+                        <img class="category-icon burger-icon" src="assets/icons/Burger_menu.svg" alt="Burger">
+                        <h2>Burger&Sandwiches</h2>
+                    </div>
+
+                    <div id="ContainerBurger" class="category-container"></div>
+                </section>
+                <section id="SectionPizza">
+                    <div class="category-seperator"></div>
+                    <div class="h2-container">
+                        <img class="category-icon" src="assets/icons/Pizza_menu.svg" alt="Pizza">
+                        <h2>Pizza <span>(30 cm)</span></h2>
+                    </div>
+
+                    <div id="ContainerPizza" class="category-container"></div>
+                </section>
+                <section id="SectionSalad">
+                    <div class="category-seperator"></div>
+                    <div class="h2-container">
+                        <img class="category-icon" src="assets/icons/Salad_menu.svg" alt="Salat">
+                        <h2>Salad</h2>
+                    </div>
+
+                    <div id="ContainerSalad" class="category-container"></div>
+                </section>
+            </section>
+            <aside id="BasketAside"></aside>
+        </section>
+    </main>
+    <footer class="wrapper">
+        <div class="footer-container">
+            <span>&copy; 2026 Burger House </span>
+            <a href="html/imprint.html">Cookie Preferences</a>
+            <a href="html/imprint.html">Imprint</a>
+        </div>
+        <div class="footer-mobile-nav-bar">
+            <a href="#Start" aria-label="Zum Seitenanfang">
+                <img src="assets/icons/homeMobile.svg" alt="">
+            </a>
+
+            <button aria-label="Zum persönlichen Profil">
+                <img src="assets/icons/personMobile.svg" alt="">
+            </button>
+
+            <a href="#Burger" aria-label="Speisekarte anzeigen">
+                <img src="assets/icons/ordersMobile.svg" alt="">
+            </a>
+
+            <button aria-label="Warenkorb öffnen">
+                <img src="assets/icons/shopping_cartMobile.svg" alt="">
+                <span id="MobileBasketAmount" class="circle-amount-dishes d-none">0</span>
+            </button>
+        </div>
+
+    </footer>
+
 
 </body>
 

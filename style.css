@@ -1,0 +1,211 @@
+.wrapper {
+    padding: 0 calc((100% - 1440px) / 2);
+    margin-top: auto;
+}
+
+
+/* header and footer */
+header,
+footer {
+    background-color: var(--color-header-footer);
+}
+
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1;
+}
+
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 40px;
+    height: 120px;
+}
+
+.header-logo {
+    height: 40px;
+}
+
+.nav-icon {
+    height: 35px;
+}
+
+.footer-container {
+    display: flex;
+    justify-self: center;
+    align-items: center;
+    gap: 72px;
+    height: 120px;
+}
+
+.footer-container span,
+.footer-container a {
+    font-family: var(--font-family-sub);
+    font-size: var(--font-size-18);
+    font-weight: var(--font-weight-regular);
+    color: var(--color-link);
+
+}
+
+.footer-mobile-nav-bar {
+    display: none;
+}
+
+/*hero section*/
+.hero-image {
+    background-image: url(assets/img/heroimg.png);
+    background-position: bottom;
+    background-size: cover;
+    height: 400px;
+}
+
+.hero-logo {
+    box-sizing: content-box;
+    position: absolute;
+    top: 400px;
+    display: flex;
+    justify-self: center;
+    border: 12px solid var(--color-light);
+    border-radius: 50%;
+    box-shadow: rgba(0, 0, 0, 0.25) 2px 4px 4px;
+    height: 200px;
+}
+
+.hero-text {
+    text-align: center;
+    text-wrap: balance;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 100px 24px 60px;
+    height: 300px;
+}
+
+.h1-container {
+    display: flex;
+    align-items: center;
+    padding: 20px;
+    gap: 32px;
+}
+
+.star-container {
+    display: flex;
+    align-items: center;
+    margin-top: 10px;
+}
+
+.hero-subtitle {
+    font-size: var(--font-size-24);
+    font-weight: var(--font-weight-bold);
+    font-family: var(--font-family-sub);
+}
+
+/* dishes-section */
+.dishes-and-basket-section {
+    display: flex;
+    justify-content: space-between;
+}
+
+.category-seperator {
+    position: absolute;
+    left: 0;
+    background-color: var(--color-seperator);
+    width: 100%;
+    height: 60px;
+    z-index: -1;
+}
+
+.h2-container {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+    height: 60px;
+}
+
+.burger-icon {
+    margin-bottom: 24px;
+}
+
+.category-icon {
+    margin-left: 160px;
+    height: 90px;
+}
+
+#SectionBurger>.category-seperator {
+    top: calc(120px + 400px + 300px);
+}
+
+#SectionPizza>.category-seperator {
+    top: calc(120px + 400px + 300px + 60px + 770px);
+}
+
+#SectionSalad>.category-seperator {
+    top: calc(120px + 400px + 300px + 60px + 770px + 60px + 770px);
+}
+
+.category-container {
+    display: flex;
+    flex-direction: column;
+    padding-top: 32px;
+    gap: 16px;
+    height: 770px;
+}
+
+.dish-container {
+    background-color: var(--color-dish-container);
+    display: flex;
+    margin: 0 120px;
+    border-radius: 12px;
+    padding: 12px;
+    gap: 16px;
+}
+
+.dish-img {
+    border-radius: 12px;
+    height: 120px;
+    aspect-ratio: 4/3;
+    object-fit: cover;
+}
+
+.name-and-description-container {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.price-and-add-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-end;
+}
+
+h3.dish-card {
+    font-family: var(--font-family-sub);
+    font-size: var(--font-size-24);
+    font-weight: var(--font-weight-semibold);
+    line-height: var(--line-height-120);
+    font-style: normal;
+}
+
+.dish-description {
+    font-family: var(--font-family-sub);
+    font-size: var(--dish-font-size-16);
+    font-weight: var(--font-weight-medium);
+    line-height: var(--line-height-120);
+    font-style: normal;
+    padding-top: 15px;
+}
+
+.dish-price {
+    font-family: var(--font-family-sub);
+    font-size: var(--dish-price-size);
+    font-weight: var(--font-weight-semibold);
+    line-height: var(--line-height-120);
+    font-style: var(--font-weight-semibold);
+}

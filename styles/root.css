@@ -1,0 +1,92 @@
+:root {
+    /*colors*/
+
+    --color-header-footer: rgba(231, 108, 31, 1);
+    --color-link: rgba(255, 255, 255, 1);
+    --color-h1-span: rgba(231, 108, 31, 1);
+    --color-h2: rgba(255, 255, 255, 1);
+    --color-seperator: rgba(231, 108, 31, 1);
+    --color-dish-container: rgba(253, 234, 220, 1);
+    --color-dish-basket: rgba(253, 234, 220, 1);
+    --color-bg-basket: rgba(54, 53, 52, 1);
+
+    /*fonts,family,size,weight*/
+    --font-family-main: 'Palanquin Dark', sans-serif;
+    --font-family-sub: 'Palanquin', sans-serif;
+
+    /* font-size */
+    --font-size-48: 48px;
+    --font-size-40: 40px;
+    --font-size-32: 32px;
+    --font-size-24: 24px;
+    --font-size-22: 22px;
+    --font-size-18: 18px;
+    --font-size-16: 16px;
+
+    /* fonts dish and basket*/
+    --dish-font-size: var(--font-size-16);
+    --dish-price-size: var(--font-size-24);
+
+    --basket-empty-size: var(--font-size-24);
+    --basket-empty-weight: var(--font-weight-medium);
+
+    --basket-title-family: var(--font-family-sub);
+    --basket-title-size: var(--font-size-32);
+    --basket-title-weight: var(--font-weight-bold);
+
+    --basket-item-family: var(--font-family-sub);
+    --basket-item-size: var(--font-size-22);
+    --basket-item-weight: var(--font-weight-bold);
+
+    --basket-price-size: var(--font-size-18);
+    --basket-price-weight: var(--font-weight-semibold);
+
+    --basket-total-size: var(--font-size-24);
+    --basket-total-weight: var(--font-weight-bold);
+
+    /* font-weight */
+    --font-weight-bold: 700;
+    --font-weight-semibold: 600;
+    --font-weight-medium: 500;
+    --font-weight-regular: 400;
+
+    /* line-height */
+    --line-height-120: 1.2;
+    /*Button*/
+    --color-btn-bg: rgba(255, 255, 255, 1);
+    --color-btn-text: #333333
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    padding-top: 120px;
+}
+
+h1 {
+    font-family: var(--font-family-main);
+    font-size: var(--font-size-48);
+    font-weight: var(--font-weight-bold);
+    font-style: 700;
+}
+
+h1 span {
+    color: var(--color-h1-span);
+}
+
+h2 {
+    font-size: var(--font-size-40);
+    font-weight: var(--font-weight-bold);
+    font-family: var(--font-family-sub);
+    color: var(--color-h2);
+
+}
