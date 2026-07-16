@@ -132,3 +132,20 @@ th {
     border-top: 3px solid var(--color-money-calc);
 
 }
+
+.money-calculation td,
+.money-calculation th {
+    font-family: var(--basket-calc-family);
+    font-size: var(--basket-calc-size);
+    font-weight: var(--basket-calc-weight);
+    line-height: var(--line-height-120);
+}
+
+.money-calculation td {
+    padding-top: 0;
+    padding-bottom: 8px;
+}
+
+.money-calculation th {
+    padding-top: 8px;
+}
