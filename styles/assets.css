@@ -6,6 +6,24 @@ a {
 }
 
 /*Buttons&Hover*/
+
+button {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+}
+
+.circle-amount-dishes {
+    position: absolute;
+    bottom: 32px;
+    right: 24px;
+    color: var(--color-seperator);
+    background-color: var(--color-dish-basket);
+    border-radius: 50%;
+    width: 16px;
+    height: 16px;
+}
+
 .btn-add-to-basket {
     font-family: var(--font-family-sub);
     font-size: var(--dish-font-size-16);
