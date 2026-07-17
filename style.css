@@ -289,6 +289,38 @@ h3.dish-card {
     .category-seperator {
         display: none;
     }
+
+    .hero-text {
+        height: auto;
+    }
+
+    .h2-container {
+        background-color: var(--color-seperator);
+        margin-right: -440px;
+    }
+
+    .category-icon {
+        margin-left: 120px;
+    }
+
+    .category-container {
+        padding-bottom: 80px;
+        height: auto;
+    }
+
+    .dish-container {
+        flex-direction: column;
+        margin-left: 80px;
+        margin-right: 40px;
+    }
+
+    .dish-img {
+        height: 88px;
+    }
+
+    .price-and-add-container {
+        flex-direction: row;
+    }
 }
 
 @media screen and (max-width: 1279px) {
