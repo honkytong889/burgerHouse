@@ -284,3 +284,128 @@ h3.dish-card {
 
     }
 }
+
+@media screen and (max-width: 1000px) {
+    .h2-container {
+        margin-right: -350px;
+        gap: 24px;
+    }
+
+    .category-icon {
+        margin-left: 60px;
+    }
+
+    .dish-container {
+        margin-left: 40px;
+        margin-right: 20px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+
+    .footer-container {
+        flex-direction: column-reverse;
+        justify-content: center;
+        margin-bottom: 60px;
+        gap: 8px;
+        height: 120px;
+    }
+
+    .header-container,
+    .footer-mobile-nav-bar {
+        padding: 0 24px;
+    }
+
+    .footer-mobile-nav-bar {
+        position: fixed;
+        bottom: 0;
+        background-color: var(--color-bg-basket);
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+        height: 60px;
+        z-index: 1;
+    }
+
+    .hero-image {
+        border-radius: 16px;
+        margin: 24px;
+        height: 250px;
+    }
+
+    .hero-logo {
+        top: 280px;
+        height: 120px;
+    }
+
+    .hero-text {
+        padding-top: 60px;
+    }
+
+    h1 {
+        font-size: var(--font-size-40);
+    }
+
+    h2 {
+        font-size: var(--font-size-32);
+        padding-bottom: 8px;
+    }
+
+    .h2-container {
+        flex-direction: column;
+        justify-content: flex-end;
+        margin-right: 0;
+        gap: 0;
+    }
+
+    .category-icon {
+        margin-left: 0;
+        height: 60px;
+        margin-bottom: -23px;
+    }
+
+    .burger-icon {
+        margin-bottom: -20px;
+    }
+
+    .dish-container {
+        margin-left: 24px;
+        margin-right: 24px;
+    }
+
+    .span-confirmation-dialog {
+        font-size: var(--font-size-40);
+    }
+
+    .p-confirmation-dialog {
+        font-size: var(--font-size-24);
+    }
+}
+
+@media screen and (max-width: 480px) {
+
+    .header-container,
+    .footer-nav-bar {
+        padding: 0 16px;
+    }
+
+    .hero-image {
+        margin: 16px;
+    }
+
+    .hero-logo {
+        top: 270px;
+
+    }
+
+    .h1-container {
+        flex-direction: column-reverse;
+        gap: 16px;
+    }
+
+    .dish-container {
+        margin-left: 16px;
+        margin-right: 16px;
+    }
+}
