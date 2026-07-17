@@ -285,6 +285,40 @@ h3.dish-card {
     }
 }
 
+@media screen and (max-width: 1440px) {
+    .category-seperator {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 1279px) {
+    main {
+        margin-top: 80px;
+    }
+
+    .header-container,
+    .footer-container {
+        height: 80px;
+    }
+
+    .hero-logo {
+        top: 360px;
+    }
+
+    .h2-container {
+        margin-right: -400px;
+    }
+
+    .category-icon {
+        margin-left: 80px;
+    }
+
+    .dish-container {
+        margin-left: 50px;
+        margin-right: 30px;
+    }
+}
+
 @media screen and (max-width: 1000px) {
     .h2-container {
         margin-right: -350px;
