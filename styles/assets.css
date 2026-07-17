@@ -118,3 +118,33 @@ button {
     padding: 16px;
     width: 100%;
 }
+
+
+@media screen and (max-width: 1000px) {
+    .btn-buy-now {
+        font-size: 24px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .basket {
+        position: relative;
+    }
+
+    .btn-close,
+    .basket>.btn-close {
+        position: absolute;
+        top: 16px;
+        right: 16px;
+        z-index: 10;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .circle-amount-dishes {
+        right: 16px;
+    }
+}
