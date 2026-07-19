@@ -61,6 +61,7 @@ header {
     background-position: bottom;
     background-size: cover;
     height: 400px;
+    margin-top: 120px;
 }
 
 .hero-logo {
@@ -286,9 +287,7 @@ h3.dish-card {
 }
 
 @media screen and (max-width: 1440px) {
-    body {
-        padding-top: unset;
-    }
+
 
     .category-seperator {
         display: none;
@@ -329,6 +328,13 @@ h3.dish-card {
 }
 
 @media screen and (max-width: 1279px) {
+    .hero-image {
+        background-image: url(assets/img/heroimg.png);
+        background-position: bottom;
+        background-size: cover;
+        height: 400px;
+        margin-top: unset;
+    }
 
     main {
         margin-top: 80px;
@@ -358,6 +364,8 @@ h3.dish-card {
 }
 
 @media screen and (max-width: 1028px) {
+
+
     h2 span {
         display: none;
     }
@@ -409,13 +417,13 @@ h3.dish-card {
     }
 
     .hero-image {
-        border-radius: 16px;
+        border-radius: unset;
         margin: unset;
         height: 250px;
     }
 
     .hero-logo {
-        top: 260px;
+        top: 250px;
         height: 120px;
     }
 
@@ -471,6 +479,7 @@ h3.dish-card {
     }
 
     .hero-image {
+        border-radius: 16px;
         margin: 16px;
     }
 
