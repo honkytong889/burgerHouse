@@ -352,6 +352,12 @@ h3.dish-card {
     }
 }
 
+@media screen and (max-width: 1028px) {
+    h2 span {
+        display: none;
+    }
+}
+
 @media screen and (max-width: 1000px) {
     .h2-container {
         margin-right: -350px;
