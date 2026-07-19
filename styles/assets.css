@@ -6,6 +6,24 @@ a {
 }
 
 /*Buttons&Hover*/
+
+button {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+}
+
+.circle-amount-dishes {
+    position: absolute;
+    bottom: 32px;
+    right: 24px;
+    color: var(--color-seperator);
+    background-color: var(--color-dish-basket);
+    border-radius: 50%;
+    width: 16px;
+    height: 16px;
+}
+
 .btn-add-to-basket {
     font-family: var(--font-family-sub);
     font-size: var(--dish-font-size-16);
@@ -99,4 +117,34 @@ a {
     border-radius: 60px;
     padding: 16px;
     width: 100%;
+}
+
+
+@media screen and (max-width: 1000px) {
+    .btn-buy-now {
+        font-size: 24px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .basket {
+        position: relative;
+    }
+
+    .btn-close,
+    .basket>.btn-close {
+        position: absolute;
+        top: 16px;
+        right: 16px;
+        z-index: 10;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .circle-amount-dishes {
+        right: 16px;
+    }
 }

@@ -48,7 +48,9 @@
                     <div class="category-seperator"></div>
                     <div class="h2-container">
                         <img class="category-icon burger-icon" src="assets/icons/Burger_menu.svg" alt="Burger">
-                        <h2>Burger&Sandwiches</h2>
+                        <h2>Burger <span>&Sandwiches</span>
+                        </h2>
+
                     </div>
 
                     <div id="ContainerBurger" class="category-container"></div>
@@ -96,7 +98,7 @@
                 <img src="assets/icons/ordersMobile.svg" alt="">
             </a>
 
-            <button aria-label="Warenkorb öffnen">
+            <button onclick="showBasketOverlay()" id="ShoppingCart" aria-label="Warenkorb öffnen">
                 <img src="assets/icons/shopping_cartMobile.svg" alt="">
                 <span id="MobileBasketAmount" class="circle-amount-dishes d-none">0</span>
             </button>
