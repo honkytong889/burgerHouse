@@ -453,7 +453,7 @@ h3.dish-card {
 @media screen and (max-width: 480px) {
 
     .header-container,
-    .footer-nav-bar {
+    .footer-mobile-nav-bar {
         padding: 0 16px;
     }
 
