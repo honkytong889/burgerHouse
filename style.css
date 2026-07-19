@@ -286,6 +286,10 @@ h3.dish-card {
 }
 
 @media screen and (max-width: 1440px) {
+    body {
+        padding-top: unset;
+    }
+
     .category-seperator {
         display: none;
     }
@@ -325,6 +329,7 @@ h3.dish-card {
 }
 
 @media screen and (max-width: 1279px) {
+
     main {
         margin-top: 80px;
     }
@@ -376,6 +381,8 @@ h3.dish-card {
 
 @media screen and (max-width: 768px) {
 
+
+
     .footer-container {
         flex-direction: column-reverse;
         justify-content: center;
@@ -403,12 +410,12 @@ h3.dish-card {
 
     .hero-image {
         border-radius: 16px;
-        margin: 24px;
+        margin: unset;
         height: 250px;
     }
 
     .hero-logo {
-        top: 280px;
+        top: 260px;
         height: 120px;
     }
 
