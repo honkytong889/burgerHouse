@@ -1,4 +1,19 @@
-const dishesInBasket = { "dishes": [], "amounts": [] };
+
+const dishesInBasket = {
+    "dishes": [],
+    "amounts": []
+};
+
+const DELIVERY_FEE = 4.99;
+
+function formatPrice(amount) {
+    return amount.toFixed(2).replace(".", ",") + " €";
+}
+
+function getBasketIndex(indexDish) {
+    return dishesInBasket.dishes.indexOf(indexDish);
+}
+
 
 function init() {
     renderAllDishContainer();
@@ -7,26 +22,23 @@ function init() {
 
 function renderAllDishContainer() {
     for (let indexDish = 0; indexDish < allDishes.length; indexDish++) {
-        const category = allDishes[indexDish].category;
-        const name = allDishes[indexDish].name;
-        const imageFilename = allDishes[indexDish].imageFilename;
-        const description = allDishes[indexDish].description;
-        const price = allDishes[indexDish].price.toFixed(2).toString().replace(".", ",") + " €";
+        const dish = allDishes[indexDish];
+        const dishContainerRef = document.getElementById('Container' + dish.category);
 
-        const dishContainerRef = document.getElementById('Container' + category);
         if (dishContainerRef) {
-            dishContainerRef.innerHTML += templateDishContainer(indexDish, name, imageFilename, description, price);
+            const formattedPrice = formatPrice(dish.price);
+            dishContainerRef.innerHTML += templateDishContainer(
+                indexDish, dish.name, dish.imageFilename, dish.description, formattedPrice
+            );
         }
     }
 }
 
 function renderBasket() {
-    (dishesInBasket.dishes.length == 0) ? renderEmptyBasket() : renderFilledBasket();
+    (dishesInBasket.dishes.length === 0) ? renderEmptyBasket() : renderFilledBasket();
 }
 
-
 function renderEmptyBasket() {
-
     const shoppingCartRef = document.getElementById('ShoppingCart');
     if (shoppingCartRef) shoppingCartRef.classList.remove("dishes-added-to-basket");
 
@@ -39,28 +51,24 @@ function renderEmptyBasket() {
         mobileAmountRef.innerHTML = "0";
     }
 
-    const basketAsideRef = document.getElementById('BasketAside');
-    if (basketAsideRef) basketAsideRef.innerHTML = templateEmptyBasket();
-
-    const basketDialogRef = document.getElementById('BasketDialog');
-    if (basketDialogRef) basketDialogRef.innerHTML = templateEmptyBasket();
+    ['BasketAside', 'BasketDialog'].forEach(id => {
+        const ref = document.getElementById(id);
+        if (ref) ref.innerHTML = templateEmptyBasket();
+    });
 }
 
 function renderFilledBasket() {
     renderShoppingCartIcon();
 
-    const basketAsideRef = document.getElementById('BasketAside');
-    if (basketAsideRef) basketAsideRef.innerHTML = templateFilledBasket('Aside');
-
-    const basketDialogRef = document.getElementById('BasketDialog');
-    if (basketDialogRef) basketDialogRef.innerHTML = templateFilledBasket('Dialog');
-
-    renderDishesInBasket('Aside');
-    renderDishesInBasket('Dialog');
+    ['Aside', 'Dialog'].forEach(position => {
+        const ref = document.getElementById(`Basket${position}`);
+        if (ref) ref.innerHTML = templateFilledBasket(position);
+        renderDishesInBasket(position);
+    });
 }
 
 function renderShoppingCartIcon() {
-    const amountDishes = dishesInBasket.amounts.reduce((accumulator, currentValue) => accumulator + currentValue, 0);
+    const amountDishes = dishesInBasket.amounts.reduce((acc, curr) => acc + curr, 0);
 
     const shoppingCartRef = document.getElementById('ShoppingCart');
     if (shoppingCartRef) shoppingCartRef.classList.add("dishes-added-to-basket");
@@ -70,6 +78,7 @@ function renderShoppingCartIcon() {
         amountDishesRef.classList.remove("d-none");
         amountDishesRef.innerHTML = amountDishes;
     }
+
     const mobileAmountRef = document.getElementById('MobileBasketAmount');
     if (mobileAmountRef) {
         mobileAmountRef.classList.remove("d-none");
@@ -78,68 +87,51 @@ function renderShoppingCartIcon() {
 }
 
 function renderDishesInBasket(position) {
-    let subtotal = 0;
     const choosenDishesRef = document.getElementById(`ContainerChoosenDishes${position}`);
-
     if (!choosenDishesRef) return;
 
+    let subtotal = 0;
     choosenDishesRef.innerHTML = "";
+
     for (let indexBasket = 0; indexBasket < dishesInBasket.dishes.length; indexBasket++) {
         const indexDish = dishesInBasket.dishes[indexBasket];
         const amount = dishesInBasket.amounts[indexBasket];
-        const name = allDishes[indexDish].name;
-        const basketPrice = (amount * allDishes[indexDish].price);
-
+        const dish = allDishes[indexDish];
+        const basketPrice = amount * dish.price;
         subtotal += basketPrice;
-        choosenDishesRef.innerHTML += templateDishCartInBasket(position, indexDish, name, amount, basketPrice.toFixed(2).toString().replace(".", ",") + " €");
-        toggleDeleteIcon(position, indexDish, amount);
+
+        const deleteButtonHtml = (amount > 1) ? templateDeleteAllButton(indexDish) : '';
+        const minusButtonHtml = templateMinusButton(indexDish, amount === 1);
+
+        choosenDishesRef.innerHTML += templateDishCartInBasket(
+            indexDish, dish.name, amount, formatPrice(basketPrice), deleteButtonHtml, minusButtonHtml
+        );
     }
 
     renderMoneyCalculation(position, subtotal);
 }
 
-function toggleDeleteIcon(position, indexDish, amount) {
-    const deleteAllRef = document.getElementById(`DeleteAll${indexDish}${position}`);
-    const deleteOneRef = document.getElementById(`DeleteOne${indexDish}${position}`);
-
-    if (deleteAllRef) {
-        deleteAllRef.classList.toggle("d-none", amount === 1);
-    }
-
-
-    if (deleteOneRef) {
-        if (amount === 1) {
-            deleteOneRef.classList.add("btn-delete-one");
-            deleteOneRef.innerHTML = `<img src="assets/icons/trash.svg" alt="Löschen" class="delete-svg icon-trash-minus">`;
-
-        } else {
-            deleteOneRef.classList.remove("btn-delete-one");
-            deleteOneRef.innerHTML = `-`;
-        }
-    }
-}
-
 function renderMoneyCalculation(position, subtotal) {
-    const deliveryFee = 4.99;
-    const total = (subtotal + deliveryFee).toFixed(2).toString().replace(".", ",") + " €";
+    const total = subtotal + DELIVERY_FEE;
 
     const subtotalRef = document.getElementById(`Subtotal${position}`);
     const deliveryFeeRef = document.getElementById(`DeliveryFee${position}`);
     const totalRef = document.getElementById(`Total${position}`);
     const buyNowRef = document.getElementById(`BuyNow${position}`);
 
-    if (subtotalRef) subtotalRef.innerHTML = subtotal.toFixed(2).toString().replace(".", ",") + " €";
-    if (deliveryFeeRef) deliveryFeeRef.innerHTML = deliveryFee.toFixed(2).toString().replace(".", ",") + " €";
-    if (totalRef) totalRef.innerHTML = total;
-    if (buyNowRef) buyNowRef.innerHTML = `Buy now (${total})`;
+    if (subtotalRef) subtotalRef.innerHTML = formatPrice(subtotal);
+    if (deliveryFeeRef) deliveryFeeRef.innerHTML = formatPrice(DELIVERY_FEE);
+    if (totalRef) totalRef.innerHTML = formatPrice(total);
+    if (buyNowRef) buyNowRef.innerHTML = `Buy now (${formatPrice(total)})`;
 }
 
 function addToBasket(indexDish) {
-    if (!dishesInBasket.dishes.includes(indexDish)) {
+    const i = getBasketIndex(indexDish);
+
+    if (i === -1) {
         dishesInBasket.dishes.push(indexDish);
         dishesInBasket.amounts.push(1);
     } else {
-        const i = dishesInBasket.dishes.indexOf(indexDish);
         dishesInBasket.amounts[i] += 1;
     }
 
@@ -147,25 +139,16 @@ function addToBasket(indexDish) {
     renderFilledBasket();
 }
 
-function deleteOneFromBasket(indexDish) {
-    const i = dishesInBasket.dishes.indexOf(indexDish);
+function removeFromBasket(indexDish, deleteAll = false) {
+    const i = getBasketIndex(indexDish);
+    if (i === -1) return;
 
-    if (dishesInBasket.amounts[i] == 1) {
+    if (deleteAll || dishesInBasket.amounts[i] === 1) {
         dishesInBasket.dishes.splice(i, 1);
         dishesInBasket.amounts.splice(i, 1);
     } else {
         dishesInBasket.amounts[i] -= 1;
     }
-
-    changeAddButton(indexDish);
-    renderBasket();
-}
-
-function deleteAllFromBasket(indexDish) {
-    const i = dishesInBasket.dishes.indexOf(indexDish);
-
-    dishesInBasket.dishes.splice(i, 1);
-    dishesInBasket.amounts.splice(i, 1);
 
     changeAddButton(indexDish);
     renderBasket();
@@ -190,11 +173,10 @@ function changeAddButton(indexDish) {
     const addButtonRef = document.getElementById(`ButtonAddToBasket${indexDish}`);
     if (!addButtonRef) return;
 
-    if (dishesInBasket.dishes.includes(indexDish)) {
-        const i = dishesInBasket.dishes.indexOf(indexDish);
-        const amount = dishesInBasket.amounts[i];
+    const i = getBasketIndex(indexDish);
 
-        addButtonRef.innerHTML = `Added ${amount}`;
+    if (i !== -1) {
+        addButtonRef.innerHTML = `Added ${dishesInBasket.amounts[i]}`;
         addButtonRef.classList.add("btn-added-to-basket");
     } else {
         addButtonRef.innerHTML = `Add to basket`;
@@ -202,11 +184,10 @@ function changeAddButton(indexDish) {
     }
 }
 
-
 function showBasketOverlay() {
     const basketDialogRef = document.getElementById('BasketDialog');
     if (basketDialogRef) {
-        basketDialogRef.classList.add('show');
+        basketDialogRef.showModal();
         document.body.style.overflow = 'hidden';
         renderBasket();
     }
@@ -216,33 +197,46 @@ function showBasketOverlay() {
 function closeBasketOverlay() {
     const basketDialogRef = document.getElementById('BasketDialog');
     if (basketDialogRef) {
-        basketDialogRef.classList.remove('show');
+        basketDialogRef.close();
         document.body.style.overflow = '';
     }
 }
 
 function showConfirmationOverlay() {
     const confirmationDialogRef = document.getElementById('ConfirmationDialog');
-    if (confirmationDialogRef) {
-        deleteCompleteBasket();
-        closeBasketOverlay();
+    if (!confirmationDialogRef) return;
 
-        confirmationDialogRef.innerHTML = templateConfirmationDialog();
+    deleteCompleteBasket();
+    closeBasketOverlay();
 
-        confirmationDialogRef.showModal();
+    confirmationDialogRef.innerHTML = templateConfirmationDialog();
+    confirmationDialogRef.showModal();
+    document.body.style.overflow = 'hidden';
 
-        setTimeout(() => {
-            const hornSound = new Audio('assets/sounds/universfield-double-car-honk-352443.mp3');
-            hornSound.volume = 0.5;
-            hornSound.play().catch(e => console.log("Audio blockiert:", e));
-        }, 500);
+    setTimeout(() => {
+        const hornSound = new Audio('assets/sounds/universfield-double-car-honk-352443.mp3');
+        hornSound.volume = 0.5;
+        hornSound.play().catch(e => console.log("Audio blockiert:", e));
+    }, 500);
 
-        setTimeout(() => closeConfirmationOverlay(), 2500);
-    }
+    setTimeout(() => closeConfirmationOverlay(), 2500);
 }
 
 function closeConfirmationOverlay() {
     const confirmationDialogRef = document.getElementById('ConfirmationDialog');
-    if (confirmationDialogRef) confirmationDialogRef.close();
+    if (confirmationDialogRef) {
+        confirmationDialogRef.close();
+        document.body.style.overflow = '';
+    }
 }
+
+['BasketDialog', 'ConfirmationDialog'].forEach(id => {
+    document.addEventListener('click', function (event) {
+        const dialogRef = document.getElementById(id);
+        if (dialogRef && event.target === dialogRef) {
+            if (id === 'BasketDialog') closeBasketOverlay();
+            if (id === 'ConfirmationDialog') closeConfirmationOverlay();
+        }
+    });
+});
 
