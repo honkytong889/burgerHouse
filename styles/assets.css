@@ -50,7 +50,6 @@ button {
 .btn-add-to-basket.btn-added-to-basket {
     color: var(--color-header-footer);
     font-size: var(--font-size-16);
-    padding: 8px 18px;
     margin-left: auto;
 }
 

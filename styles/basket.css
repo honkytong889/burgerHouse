@@ -51,7 +51,7 @@ aside>.basket {
     color: var(--color-bg-basket);
     margin-right: 8px;
     border-radius: 20px;
-    padding: 20px;
+    padding: 10px;
 }
 
 .choosen-dish-card-child-container {
@@ -86,6 +86,8 @@ aside>.basket {
 .amount-control button,
 .amount-control span,
 .amount-control div {
+    font-family: var(--basket-calc-family);
+    font-size: var(--font-size-22);
     display: inline-flex;
     align-items: center;
     justify-content: center;
@@ -156,7 +158,6 @@ th {
     top: 0;
     left: 0;
     width: 100vw;
-    height: 100vh;
     z-index: 999;
     background-color: var(--color-bg-basket);
     border: none;
@@ -176,46 +177,46 @@ th {
 }
 
 @media screen and (max-width: 768px) {
-    .basket {
-        gap: 16px;
-    }
 
     aside>.basket {
         display: none;
     }
 
-    dialog>.basket {
-        border-radius: 30px 30px 0 0;
-        padding: 24px 16px;
-        max-height: calc(100vh - 140px);
-        width: 100%;
-    }
 
-    #BasketDialog {
-        background-color: transparent;
-        height: auto;
-        border: none;
-        padding: 0;
-        width: calc(100% - 48px);
-        max-width: 440px;
-
+    #BasketDialog[open] {
+        display: flex !important;
+        flex-direction: column;
+        width: 100vw;
+        height: 100vh;
+        max-width: 100vw;
+        max-height: 100vh;
         position: fixed;
-        top: auto;
-        bottom: 60px;
-        left: 50%;
-        transform: translateX(-50%);
-        display: none;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        right: 0;
         margin: 0;
+        padding: 0;
+        border: none;
+        transform: none;
+        background-color: var(--color-bg-basket);
     }
 
-    #BasketDialog.show {
+
+    #BasketDialog .basket {
+        width: 100%;
+        height: 100%;
+        max-height: 100vh;
+        border-radius: 0;
+        padding: 16px;
+        gap: 16px;
         display: flex;
         flex-direction: column;
+        box-sizing: border-box;
     }
-}
 
-@media screen and (max-width: 480px) {
-    #BasketDialog {
-        width: calc(100% - 32px);
+    .choosen-dishes-container {
+        flex: 1;
+        overflow-y: auto;
     }
 }
