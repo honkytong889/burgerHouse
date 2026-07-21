@@ -222,24 +222,24 @@ function showConfirmationOverlay() {
             });
         }, 500);
 
-    setTimeout(() => closeConfirmationOverlay(), 2500);
-}
-
-function closeConfirmationOverlay() {
-    const confirmationDialogRef = document.getElementById('ConfirmationDialog');
-    if (confirmationDialogRef) {
-        confirmationDialogRef.close();
-        document.body.style.overflow = '';
+        setTimeout(() => closeConfirmationOverlay(), 2500);
     }
-}
 
-['BasketDialog', 'ConfirmationDialog'].forEach(id => {
-    document.addEventListener('click', function (event) {
-        const dialogRef = document.getElementById(id);
-        if (dialogRef && event.target === dialogRef) {
-            if (id === 'BasketDialog') closeBasketOverlay();
-            if (id === 'ConfirmationDialog') closeConfirmationOverlay();
+    function closeConfirmationOverlay() {
+        const confirmationDialogRef = document.getElementById('ConfirmationDialog');
+        if (confirmationDialogRef) {
+            confirmationDialogRef.close();
+            document.body.style.overflow = '';
         }
-    });
-});
+    }
 
+    ['BasketDialog', 'ConfirmationDialog'].forEach(id => {
+        document.addEventListener('click', function (event) {
+            const dialogRef = document.getElementById(id);
+            if (dialogRef && event.target === dialogRef) {
+                if (id === 'BasketDialog') closeBasketOverlay();
+                if (id === 'ConfirmationDialog') closeConfirmationOverlay();
+            }
+        });
+    });
+}
