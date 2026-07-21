@@ -35,7 +35,8 @@ Sie benötigen lediglich einen modernen Webbrowser (z. B. Google Chrome, Mozilla
 ### Starten der App
 1. **Repository klonen:**
    ```bash
-   git clone https://github.com
+   git clone https://github.com/honkytong889/burgerHouse
+
    ```
 2. **In das Projektverzeichnis wechseln:**
    ```bash
