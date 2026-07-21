@@ -186,12 +186,18 @@ function changeAddButton(indexDish) {
 
 function showBasketOverlay() {
     const basketDialogRef = document.getElementById('BasketDialog');
-    if (basketDialogRef) {
+    if (!basketDialogRef) return;
+
+
+    if (basketDialogRef.open) {
+        closeBasketOverlay();
+    } else {
         basketDialogRef.showModal();
         document.body.style.overflow = 'hidden';
         renderBasket();
     }
 }
+
 
 
 function closeBasketOverlay() {

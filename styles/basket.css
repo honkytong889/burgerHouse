@@ -82,6 +82,7 @@ aside>.basket {
     display: flex;
     align-items: center;
     gap: 8px;
+    font-size: var(--font-size-22);
 }
 
 .amount-control button,
@@ -94,7 +95,6 @@ aside>.basket {
     justify-content: center;
     width: 28px;
     height: 28px;
-    font-size: 22px;
     font-weight: bold;
     background: transparent;
     border: none;
@@ -105,7 +105,7 @@ aside>.basket {
 
 .amount-control span:not(button) {
     cursor: default;
-    font-size: 18px;
+    font-size: var(--font-size-22);
 }
 
 .money-calculation {
