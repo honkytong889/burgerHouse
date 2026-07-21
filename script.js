@@ -202,22 +202,25 @@ function closeBasketOverlay() {
     }
 }
 
+
 function showConfirmationOverlay() {
     const confirmationDialogRef = document.getElementById('ConfirmationDialog');
-    if (!confirmationDialogRef) return;
 
-    deleteCompleteBasket();
-    closeBasketOverlay();
+    if (confirmationDialogRef) {
 
-    confirmationDialogRef.innerHTML = templateConfirmationDialog();
-    confirmationDialogRef.showModal();
-    document.body.style.overflow = 'hidden';
-
-    setTimeout(() => {
         const hornSound = new Audio('assets/sounds/universfield-double-car-honk-352443.mp3');
         hornSound.volume = 0.5;
-        hornSound.play().catch(e => console.log("Audio blockiert:", e));
-    }, 500);
+
+        deleteCompleteBasket();
+        closeBasketOverlay();
+        confirmationDialogRef.innerHTML = templateConfirmationDialog();
+        confirmationDialogRef.showModal();
+
+        setTimeout(() => {
+            hornSound.play().catch(error => {
+                console.warn("Audio-Autoplay vom Browser blockiert:", error);
+            });
+        }, 500);
 
     setTimeout(() => closeConfirmationOverlay(), 2500);
 }
