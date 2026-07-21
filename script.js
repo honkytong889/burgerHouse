@@ -73,6 +73,9 @@ function renderShoppingCartIcon() {
     const shoppingCartRef = document.getElementById('ShoppingCart');
     if (shoppingCartRef) shoppingCartRef.classList.add("dishes-added-to-basket");
 
+    const mobileShoppingCartRef = document.getElementById('MobileShoppingCart');
+    if (mobileShoppingCartRef) mobileShoppingCartRef.classList.add("dishes-added-to-basket");
+
     const amountDishesRef = document.getElementById('AmountDishes');
     if (amountDishesRef) {
         amountDishesRef.classList.remove("d-none");
@@ -239,13 +242,15 @@ function showConfirmationOverlay() {
         }
     }
 
-    ['BasketDialog', 'ConfirmationDialog'].forEach(id => {
-        document.addEventListener('click', function (event) {
-            const dialogRef = document.getElementById(id);
-            if (dialogRef && event.target === dialogRef) {
-                if (id === 'BasketDialog') closeBasketOverlay();
-                if (id === 'ConfirmationDialog') closeConfirmationOverlay();
-            }
-        });
-    });
 }
+document.addEventListener('click', function (event) {
+    const basketDialogRef = document.getElementById('BasketDialog');
+    const confirmationDialogRef = document.getElementById('ConfirmationDialog');
+
+    if (basketDialogRef && event.target === basketDialogRef) {
+        closeBasketOverlay();
+    }
+    if (confirmationDialogRef && event.target === confirmationDialogRef) {
+        closeConfirmationOverlay();
+    }
+});
